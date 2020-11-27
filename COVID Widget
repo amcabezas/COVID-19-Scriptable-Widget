@@ -151,12 +151,12 @@ widget.backgroundImage = fm.readImage(path);
   setWidgetTextStyle(totalDeathsName, 'NAME')
 
 
-  // Deaths Todays
-  const totalDeathsStat = widget.addText(STAT__DEATHS_TODAY)
-  setWidgetTextStyle(totalDeathsStat, 'STAT')
+  // Deaths Today
+  const todayDeathsStat = widget.addText(STAT__DEATHS_TODAY)
+  setWidgetTextStyle(todayDeathsStat, 'STAT')
   widget.addSpacer(1.5)
-  const totalDeathsName = widget.addText(TEXT__DEATHS_TODAY)
-  setWidgetTextStyle(totalDeathsName, 'NAME')
+  const todayDeathsName = widget.addText(TEXT__DEATHS_TODAY)
+  setWidgetTextStyle(todaylDeathsName, 'NAME')
 
   return widget
 }
