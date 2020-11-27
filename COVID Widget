@@ -30,7 +30,7 @@ const FONT__NAME_TEXT = { COLOR: Color.white(), FAMILY: 'ArialRoundedMTBold', SI
 if (true || config.runsInWidget) {
   let widget = createWidget()
 
-  widget.presentSmall()
+  widget.presentLarge()
   Script.setWidget(widget)
   Script.complete()
 } else {
