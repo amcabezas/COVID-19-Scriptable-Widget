@@ -1,5 +1,5 @@
 // change "COUNTRY" to a value from https://coronavirus-19-api.herokuapp.com/countries/
-const COUNTRY = "UK"
+const COUNTRY = "Chile"
 
 const API__URL = `https://coronavirus-19-api.herokuapp.com/countries/${COUNTRY}`
 const API__REQ = new Request(API__URL)
@@ -9,12 +9,14 @@ const TEXT__TITLE = { default: `🦠 COVID Statistics for ${COUNTRY}`, smallWidg
 const TEXT__TOTAL_CASES = "Total Cases"
 const TEXT__CASES_TODAY = "Cases Today"
 const TEXT__TOTAL_DEATHS = "Total Deaths"
+const TEXT__DEATHS_TODAY = "Deaths Today"
 const TEXT__RECOVERED = "Recovered"
 const TEXT__CRITICAL = "Critical"
 
 const STAT__TOTAL_CASES = `${API__RES.cases}`
 const STAT__CASES_TODAY = `${API__RES.todayCases}`
 const STAT__TOTAL_DEATHS = `${API__RES.deaths}`
+const STAT__DEATHS_TODAY = `${API__RES.todayDeaths}`
 const STAT__RECOVERED = `${API__RES.recovered}`
 const STAT__CRITICAL = `${API__RES.critical}`
 
@@ -50,6 +52,7 @@ function createStatTable() {
   table.addRow(createStatRow(TEXT__TOTAL_CASES, STAT__TOTAL_CASES))
   table.addRow(createStatRow(TEXT__CASES_TODAY, STAT__CASES_TODAY))
   table.addRow(createStatRow(TEXT__TOTAL_DEATHS, STAT__TOTAL_DEATHS))
+  table.addRow(createStatRow(TEXT__DEATHS_TODAY, STAT__DEATHS_TODAY))
   table.addRow(createStatRow(TEXT__RECOVERED, STAT__RECOVERED))
   table.addRow(createStatRow(TEXT__CRITICAL, STAT__CRITICAL))
 
@@ -147,6 +150,13 @@ widget.backgroundImage = fm.readImage(path);
   const totalDeathsName = widget.addText(TEXT__TOTAL_DEATHS)
   setWidgetTextStyle(totalDeathsName, 'NAME')
 
+
+  // Deaths Todays
+  const totalDeathsStat = widget.addText(STAT__DEATHS_TODAY)
+  setWidgetTextStyle(totalDeathsStat, 'STAT')
+  widget.addSpacer(1.5)
+  const totalDeathsName = widget.addText(TEXT__DEATHS_TODAY)
+  setWidgetTextStyle(totalDeathsName, 'NAME')
 
   return widget
 }
